@@ -27,18 +27,18 @@ const mongoClient = new MongoClient(`mongodb://${userName}:${password}@${host}/$
   }
 })();
 
-app.get('/cars/', (req, res) =>
+app.post('/search/', (req, res) =>
   search(req, res)
 );
 
-app.post('/cars/', (req, res) =>
+app.post('/create/', (req, res) =>
   create(req, res)
 );
 
-app.put('/cars/:id', (req, res) =>
+app.put('/update/:id', (req, res) =>
   update(req, res)
 );
 
-app.delete('/cars/:id', (req, res) =>
+app.post('/delete/:id', (req, res) =>
   deleteCar(req, res)
 );
